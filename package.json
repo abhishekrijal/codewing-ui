@@ -1,12 +1,12 @@
 {
   "name": "codewing-ui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "The UI for React Components",
   "author": {
     "name": "Abhishek Rijal",
     "email": "avee.ws@gmail.com"
   },
-  "homepage": "https://github.com/piyushswain/react-rails-pagination",
+  "homepage": "https://codewing.co",
   "license": "MIT",
   "repository": "xqluzxwise/codewing-ui",
   "main": "dist/index.js",
