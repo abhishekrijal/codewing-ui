@@ -10,8 +10,8 @@ import ResponsiveControls, {
 	maybePromoteScalarValueIntoResponsive,
 } from "./responsive-controls";
 
-const CORE_OPTIONS_CONTEXT = require.context("./options/", false, /\.jsx$/);
-CORE_OPTIONS_CONTEXT.keys().forEach(CORE_OPTIONS_CONTEXT);
+// const CORE_OPTIONS_CONTEXT = require.context("./options/", false, /\.jsx$/);
+// CORE_OPTIONS_CONTEXT.keys().forEach(CORE_OPTIONS_CONTEXT);
 
 const hasCoreOptionModifier = (type) => {
 	let index = CORE_OPTIONS_CONTEXT.keys()
@@ -30,9 +30,9 @@ export const getOptionFor = (option) => {
 	const dynamicOptionTypes = {};
 	// ctEvents.trigger("rishi:options:register", dynamicOptionTypes);
 
-	if (hasCoreOptionModifier(option.type)) {
-		return CORE_OPTIONS_CONTEXT(hasCoreOptionModifier(option.type)).default;
-	}
+	// if (hasCoreOptionModifier(option.type)) {
+	// 	return CORE_OPTIONS_CONTEXT(hasCoreOptionModifier(option.type)).default;
+	// }
 
 	if (dynamicOptionTypes[option.type]) {
 		return dynamicOptionTypes[option.type];
@@ -45,6 +45,7 @@ export const optionWithDefault = ({ option, value }) =>
 	value === undefined ? option.value : value;
 
 const GenericOptionType = ({
+	renderComponent,
 	option,
 	value,
 	values,
@@ -95,7 +96,7 @@ const GenericOptionType = ({
 		};
 	}, []);
 
-	let OptionComponent = getOptionFor(option);
+	let OptionComponent = renderComponent;
 	let BeforeOptionContent = { content: null, option };
 
 	const globalResponsiveValue = maybePromoteScalarValueIntoResponsive(

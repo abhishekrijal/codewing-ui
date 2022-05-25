@@ -1,6 +1,6 @@
 {
   "name": "codewing-ui",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "The UI for React Components",
   "author": {
     "name": "Abhishek Rijal",
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.4.4",
+    "@wordpress/i18n": "^4.9.0",
     "@wordpress/scripts": "^22.5.0",
     "array-move": "^2.1.0",
     "bezier-easing": "^2.1.0",
@@ -50,6 +51,7 @@
     "react-window": "^1.8.7",
     "simple-linear-scale": "^1.0.1",
     "throttle-debounce": "^5.0.0",
+    "underscore": "^1.13.3",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
