@@ -12,6 +12,10 @@ export { default as Editor } from "./options/wp-editor";
 export { default as Slider } from "./options/ab-slider";
 export { default as Spacing } from "./options/ab-spacing";
 export { default as Typography } from "./options/ab-typography";
+export { default as ColorPicker } from "./options/ab-color-picker";
+export { default as Border } from "./options/ab-border";
+export { default as PostsSelect } from "./options/ab-posts-select";
+export { default as catSelect } from "./options/ab-cat-select";
 
 
 export { default as GenericOptionType } from './GenericOptionType';

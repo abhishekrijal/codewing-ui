@@ -12,6 +12,8 @@ import {
 	decideVariationToSelect,
 	familyForDisplay, humanizeVariationsShort
 } from "./helpers";
+
+import * as googleFonts from './google-fonts.json';
 import VariationsList from "./VariationsList";
 
 const combineRefs = (...refs) => (el) => {
@@ -104,63 +106,47 @@ const TypographyModal = ({
 	);
 
 	const fetchFontsList = async () => {
-		const body = new FormData();
+		setTypographyList({
+			...data.fonts,
+			system: {
+				...data.fonts.system,
+				families: [
+					...(option.isDefault
+						? []
+						: [
+							{
+								source: "system",
+								family: "Default",
+								variations: [],
+								all_variations: [
+									"Default",
+									"n1",
+									"i1",
+									"n2",
+									"i2",
+									"n3",
+									"i3",
+									"n4",
+									"i4",
+									"n5",
+									"i5",
+									"n6",
+									"i6",
+									"n7",
+									"i7",
+									"n8",
+									"i8",
+									"n9",
+									"i9",
+								],
+							},
+						]),
 
-		body.append("action", "magblocks_get_fonts_list");
+					...data.fonts.system.families,
+				],
+			},
+		});
 
-		try {
-			const response = await fetch(ajaxurl, {
-				method: "POST",
-				body,
-			});
-
-			if (response.status === 200) {
-				const { success, data } = await response.json();
-
-				if (success) {
-					setTypographyList({
-						...data.fonts,
-						system: {
-							...data.fonts.system,
-							families: [
-								...(option.isDefault
-									? []
-									: [
-										{
-											source: "system",
-											family: "Default",
-											variations: [],
-											all_variations: [
-												"Default",
-												"n1",
-												"i1",
-												"n2",
-												"i2",
-												"n3",
-												"i3",
-												"n4",
-												"i4",
-												"n5",
-												"i5",
-												"n6",
-												"i6",
-												"n7",
-												"i7",
-												"n8",
-												"i8",
-												"n9",
-												"i9",
-											],
-										},
-									]),
-
-								...data.fonts.system.families,
-							],
-						},
-					});
-				}
-			}
-		} catch (e) { }
 	};
 
 	useEffect(() => {
