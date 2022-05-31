@@ -7,6 +7,7 @@ import GenericOptionType from "../../GenericOptionType";
 import usePopoverMaker from "../../usePopoverMaker";
 import Switch from "../ab-switch";
 import ReactDOM from "react-dom";
+import Slider from "../ab-slider";
 
 const BoxShadowModal = ({
 	option,
@@ -114,6 +115,7 @@ const BoxShadowModal = ({
 
 							<div className="shadow-sliders">
 								<GenericOptionType
+									renderComponent={Slider}
 									value={value.h_offset}
 									values={value}
 									id="h_offset"
@@ -142,6 +144,7 @@ const BoxShadowModal = ({
 								/>
 
 								<GenericOptionType
+									renderComponent={Slider}
 									value={value.v_offset}
 									values={value}
 									id="v_offset"
@@ -170,6 +173,7 @@ const BoxShadowModal = ({
 								/>
 
 								<GenericOptionType
+									renderComponent={Slider}
 									value={value.blur}
 									values={value}
 									id="blur"
@@ -195,6 +199,7 @@ const BoxShadowModal = ({
 								/>
 
 								<GenericOptionType
+									renderComponent={Slider}
 									value={value.spread}
 									values={value}
 									id="spread"
