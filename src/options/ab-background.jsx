@@ -148,7 +148,7 @@ const Background = ({ option, value, onChange }) => {
 
 			{backgroundWrapper &&
 				backgroundWrapper.current &&
-				createPortal(
+				ReactDOM.createPortal(
 					<OutsideClickHandler
 						useCapture={false}
 						display="block"
