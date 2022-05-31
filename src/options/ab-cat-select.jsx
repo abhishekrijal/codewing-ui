@@ -151,7 +151,7 @@ export default withSelect((select, props, a, b, c) => {
 
     const {
         value,
-        taxonomy
+        option
     } = props;
 
 
@@ -163,7 +163,7 @@ export default withSelect((select, props, a, b, c) => {
     });
 
     if (slugs && slugs.length) {
-        const newCategories = getEntityRecords('taxonomy', 'category', {
+        const newCategories = getEntityRecords('taxonomy', option.taxonomy, {
             slug: slugs,
             per_page: 100,
         });
@@ -173,7 +173,7 @@ export default withSelect((select, props, a, b, c) => {
 
     return {
         findCategories(search = '') {
-            const searchCategories = getEntityRecords('taxonomy', 'category', {
+            const searchCategories = getEntityRecords('taxonomy', option.taxonomy, {
                 search,
                 per_page: 20,
             });

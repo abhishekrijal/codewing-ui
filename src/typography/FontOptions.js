@@ -1,17 +1,8 @@
-import {
-	Fragment,
-	createElement,
-	Component,
-	useRef,
-	useEffect,
-	useState,
-} from "react";
-import classnames from "classnames";
-import { __ } from "@wordpress/i18n";
-
 import { animated } from "@react-spring/web";
-
+import { __ } from "@wordpress/i18n";
+import classnames from "classnames";
 import GenericOptionType from "../GenericOptionType";
+import Slider from '../options/ab-slider';
 
 const FontOptions = ({ option, value, sizeRef, onChange, props }) => {
 	return (
@@ -22,6 +13,7 @@ const FontOptions = ({ option, value, sizeRef, onChange, props }) => {
 		>
 			<li key="size">
 				<GenericOptionType
+					renderComponent={Slider}
 					value={value.size}
 					values={value}
 					id="size"
@@ -76,6 +68,7 @@ const FontOptions = ({ option, value, sizeRef, onChange, props }) => {
 
 			<li key="line-height">
 				<GenericOptionType
+					renderComponent={Slider}
 					value={value["line-height"]}
 					values={value}
 					id="line-height"
@@ -130,6 +123,7 @@ const FontOptions = ({ option, value, sizeRef, onChange, props }) => {
 
 			<li key="letter-spacing">
 				<GenericOptionType
+					renderComponent={Slider}
 					value={value["letter-spacing"]}
 					values={value}
 					id="letter-spacing"

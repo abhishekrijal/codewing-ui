@@ -163,7 +163,8 @@ const TypographyModal = ({
 	}, [initialView]);
 
 	useEffect(() => {
-		fetchFontsList();
+		setTypographyList(option.fontsList)
+		// fetchFontsList();
 	}, []);
 
 	useEffect(() => {

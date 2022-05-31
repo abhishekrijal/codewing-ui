@@ -1,18 +1,13 @@
+import classnames from 'classnames';
+import Downshift from 'downshift';
 import {
-    createPortal,
-    useState,
-    useEffect,
-    useRef,
-    createElement,
-    Component,
-    Fragment,
-} from 'react'
+    Fragment, useEffect,
+    useRef, useState
+} from 'react';
 import ReactDOM from "react-dom";
-import { maybeTransformUnorderedChoices } from '../helpers/parse-choices.js'
-import Downshift from 'downshift'
-import classnames from 'classnames'
+import { maybeTransformUnorderedChoices } from '../helpers/parse-choices.js';
+import usePopoverMaker from '../helpers/usePopoverMaker';
 
-import usePopoverMaker from '../helpers/usePopoverMaker'
 
 const Select = ({
     value,

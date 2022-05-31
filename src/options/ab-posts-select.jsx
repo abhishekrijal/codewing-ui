@@ -149,36 +149,36 @@ export default withSelect((select, props, a, b, c) => {
 
     const {
         value,
-        postType = 'post',
+        option,
     } = props;
 
     let ids = value ? value.split(',') : [];
 
     // find non-cached posts and try to retrieve.
     ids = ids.filter((id) => {
-        return !cachedPosts[postType] || !cachedPosts[postType][id];
+        return !cachedPosts[option.postType] || !cachedPosts[option.postType][id];
     });
 
     if (ids && ids.length) {
-        const newPosts = getEntityRecords('postType', postType, {
+        const newPosts = getEntityRecords('postType', option.postType, {
             include: ids,
             per_page: 100,
         });
 
-        maybeCache(postType, newPosts);
+        maybeCache(option.postType, newPosts);
     }
 
     return {
         findPosts(search = '') {
-            const searchPosts = getEntityRecords('postType', postType, {
+            const searchPosts = getEntityRecords('postType', option.postType, {
                 search,
                 per_page: 20,
             });
 
-            maybeCache(postType, searchPosts);
+            maybeCache(option.postType, searchPosts);
 
             return searchPosts;
         },
-        allPosts: cachedPosts[postType] || {},
+        allPosts: cachedPosts[option.postType] || {},
     };
 })(ComponentPostsSelectorControl);
