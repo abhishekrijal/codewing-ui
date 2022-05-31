@@ -3,6 +3,7 @@ import {
 } from "react";
 import bezierEasing from "bezier-easing";
 import { Transition } from "react-spring/renderprops";
+import ReactDOM from "react-dom";
 
 const RatioModal = ({
   renderContent,
@@ -15,7 +16,7 @@ const RatioModal = ({
 }) => {
   return (
     (isTransitioning || isPicking) &&
-    createPortal(
+    ReactDOM.createPortal(
       <Transition
         items={isPicking}
         onRest={(isOpen) => stopTransitioning()}

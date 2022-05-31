@@ -7,6 +7,7 @@ import {
     Component,
     Fragment,
 } from 'react'
+import ReactDOM from "react-dom";
 import { maybeTransformUnorderedChoices } from '../helpers/parse-choices.js'
 import Downshift from 'downshift'
 import classnames from 'classnames'
@@ -172,7 +173,7 @@ const Select = ({
                     )
 
                     if (appendToBody) {
-                        dropdown = createPortal(dropdown, document.body)
+                        dropdown = ReactDOM.createPortal(dropdown, document.body)
                     }
                 }
 

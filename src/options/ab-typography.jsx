@@ -6,6 +6,7 @@ import {
 	useRef,
 	useState,
 } from "react";
+import ReactDOM from "react-dom";
 import { __ } from "@wordpress/i18n";
 import bezierEasing from "bezier-easing";
 import classnames from "classnames";
@@ -210,7 +211,7 @@ const Typography = ({
 			</OutsideClickHandler>
 
 			{(isTransitioning || isOpen) &&
-				createPortal(
+				ReactDOM.createPortal(
 					<Transition
 						items={isOpen}
 						onRest={(isOpen) => {

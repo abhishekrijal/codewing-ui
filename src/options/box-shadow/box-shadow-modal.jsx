@@ -6,6 +6,7 @@ import { Transition } from "react-spring/renderprops";
 import GenericOptionType from "../../GenericOptionType";
 import usePopoverMaker from "../../usePopoverMaker";
 import Switch from "../ab-switch";
+import ReactDOM from "react-dom";
 
 const BoxShadowModal = ({
 	option,
@@ -37,7 +38,7 @@ const BoxShadowModal = ({
 	return (
 		(isTransitioning === picker.id ||
 			(isPicking || "").split(":")[0] === picker.id) &&
-		createPortal(
+		ReactDOM.createPortal(
 			<Transition
 				items={isPicking}
 				onRest={(isOpen) => {

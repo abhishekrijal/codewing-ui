@@ -5,6 +5,7 @@ import {
 	useRef,
 	createRef,
 } from 'react'
+import ReactDOM from "react-dom";
 import PickerModal, { getNoColorPropFor } from './picker-modal'
 import { Transition } from 'react-spring/renderprops'
 import bezierEasing from 'bezier-easing'
@@ -58,7 +59,7 @@ const SinglePicker = ({
 		isTransitioning === picker.id ||
 		(isPicking || '').split(':')[0] === picker.id
 	) {
-		modal = createPortal(
+		modal = ReactDOM.createPortal(
 			<Transition
 				items={isPicking}
 				onRest={() => stopTransitioning()}
