@@ -1,13 +1,12 @@
-import { createPortal } from "react";
 import { __ } from "@wordpress/i18n";
 import bezierEasing from "bezier-easing";
 import classnames from "classnames";
+import ReactDOM from "react-dom";
 import { Transition } from "react-spring/renderprops";
 import GenericOptionType from "../../GenericOptionType";
 import usePopoverMaker from "../../usePopoverMaker";
-import Switch from "../ab-switch";
-import ReactDOM from "react-dom";
 import Slider from "../ab-slider";
+import Switch from "../ab-switch";
 
 const BoxShadowModal = ({
 	option,

@@ -1,9 +1,6 @@
-import {
-  createPortal
-} from "react";
 import bezierEasing from "bezier-easing";
-import { Transition } from "react-spring/renderprops";
 import ReactDOM from "react-dom";
+import { Transition } from "react-spring/renderprops";
 
 const RatioModal = ({
   renderContent,

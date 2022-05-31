@@ -1,15 +1,7 @@
-import {
-	Fragment,
-	createElement,
-	Component,
-	useRef,
-	useEffect,
-	useMemo,
-	useCallback,
-	useState,
-} from "react";
-import classnames from "classnames";
 import { __ } from "@wordpress/i18n";
+import {
+	Fragment
+} from "react";
 import GenericOptionType from "../../GenericOptionType";
 
 const ImagePicker = ({ option, value, onChange, setOutsideClickFreezed }) => {

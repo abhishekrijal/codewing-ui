@@ -1,13 +1,13 @@
-import { Fragment, useEffect, useState } from "react";
 import { __ } from "@wordpress/i18n";
 import classnames from "classnames";
 import deepEqual from "deep-equal";
+import { Fragment, useEffect, useState } from "react";
 import { getOptionLabelFor } from "./helpers/get-label";
 import ResponsiveControls, {
 	getValueForDevice,
 	isOptionEnabledFor,
 	isOptionResponsiveFor,
-	maybePromoteScalarValueIntoResponsive,
+	maybePromoteScalarValueIntoResponsive
 } from "./responsive-controls";
 
 // const CORE_OPTIONS_CONTEXT = require.context("./options/", false, /\.jsx$/);

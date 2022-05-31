@@ -1,15 +1,9 @@
+import { matchValuesWithCondition, normalizeCondition } from 'match-conditions'
 import {
-	createElement,
-	Component,
-	Fragment,
-	createContext,
-	useRef,
-	useContext,
-	useState,
+	useRef, useState
 } from 'react'
 import SinglePicker from './color-picker/single-picker'
 import OutsideClickHandler from './react-outside-click-handler'
-import { normalizeCondition, matchValuesWithCondition } from 'match-conditions'
 
 const ColorPicker = ({ option, values, value, onChange }) => {
 	const [{ isPicking, isTransitioning }, setState] = useState({

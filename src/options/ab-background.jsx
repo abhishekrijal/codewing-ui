@@ -1,6 +1,6 @@
-import { createPortal, useRef, useState } from "react";
 import { __ } from "@wordpress/i18n";
 import cls from "classnames";
+import { useRef, useState } from "react";
 import OutsideClickHandler from "../react-outside-click-handler";
 import usePopoverMaker from "../usePopoverMaker";
 import BackgroundModal from "./background/BackgroundModal";
