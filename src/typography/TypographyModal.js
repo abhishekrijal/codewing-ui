@@ -165,7 +165,7 @@ const TypographyModal = ({
 	useEffect(() => {
 		setTypographyList(option.fontsList)
 		// fetchFontsList();
-	}, []);
+	}, [option.fontsList]);
 
 	useEffect(() => {
 		if (currentView === "search") {
