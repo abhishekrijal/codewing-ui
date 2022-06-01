@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import OutsideClickHandler from "../react-outside-click-handler";
 import usePopoverMaker from "../usePopoverMaker";
 import BackgroundModal from "./background/BackgroundModal";
-import { getUrlForPattern } from "./background/PatternPicker";
 
 /**
  * Support color picker values inside the background picker.
@@ -111,27 +110,18 @@ const Background = ({ option, value, onChange }) => {
 						parseFloat(value.background_image.y) * 100
 					)}%`,
 
-					"--pattern-mask":
-						value.background_type === "pattern"
-							? `url(${getUrlForPattern(
-								value.background_pattern
-							)})`
-							: "",
-
 					"--background-image":
 						value.background_type === "gradient"
 							? value.gradient
 							: value.background_image.url
 								? `url(${value.background_image.url})`
 								: "none",
-					"--pattern-color": value.patternColor.default.color,
 				}}
 			>
 				<i className="ct-tooltip-top">
 					{
 						{
 							inherit: __("Inherited", "affliatex"),
-							pattern: __("Pattern", "affliatex"),
 							gradient: __("Gradient", "affliatex"),
 							color: __("Color", "affliatex"),
 							image: __("Image", "affliatex"),

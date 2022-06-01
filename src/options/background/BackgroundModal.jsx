@@ -6,8 +6,7 @@ import {
 import GenericOptionType from "../../GenericOptionType";
 import GradientPicker from "./GradientPicker";
 import ImagePicker from "./ImagePicker";
-import PatternPicker from "./PatternPicker";
-
+import ColorPicker from "../ab-color-picker";
 
 
 const BackgroundModal = ({
@@ -80,7 +79,7 @@ const BackgroundModal = ({
 								e.preventDefault();
 							}}
 						>
-							{["image", "pattern"].map((type) => (
+							{["image"].map((type) => (
 								<li
 									data-type={type}
 									key={type}
@@ -96,7 +95,6 @@ const BackgroundModal = ({
 								>
 									{
 										{
-											pattern: __("Pattern", "magblocks"),
 											image: __("Image", "magblocks"),
 										}[type]
 									}
@@ -104,14 +102,6 @@ const BackgroundModal = ({
 							))}
 						</ul>
 					)}
-
-				{value.background_type === "pattern" && (
-					<PatternPicker
-						option={option}
-						onChange={onChange}
-						value={value}
-					/>
-				)}
 
 				{value.background_type === "image" && (
 					<ImagePicker
@@ -128,6 +118,7 @@ const BackgroundModal = ({
 
 				{value.background_type !== "gradient" && (
 					<GenericOptionType
+						renderComponent={ColorPicker}
 						value={value["backgroundColor"]}
 						values={value}
 						option={{

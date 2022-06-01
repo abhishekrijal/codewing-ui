@@ -3,11 +3,15 @@ import {
 	Fragment
 } from "react";
 import GenericOptionType from "../../GenericOptionType";
+import ImageUploader from "../ab-image-uploader";
+import ColorPicker from "../ab-color-picker";
+import Radio from "../ab-radio";
 
 const ImagePicker = ({ option, value, onChange, setOutsideClickFreezed }) => {
 	return (
 		<Fragment>
 			<GenericOptionType
+				renderComponent={ImageUploader}
 				value={value["background_image"]}
 				values={value}
 				option={{
@@ -36,6 +40,7 @@ const ImagePicker = ({ option, value, onChange, setOutsideClickFreezed }) => {
 			/>
 
 			<GenericOptionType
+				renderComponent={Radio}
 				value={value["background_repeat"]}
 				values={value}
 				option={{
@@ -68,6 +73,7 @@ const ImagePicker = ({ option, value, onChange, setOutsideClickFreezed }) => {
 			/>
 
 			<GenericOptionType
+				renderComponent={Radio}
 				value={value["background_size"]}
 				values={value}
 				option={{
@@ -93,6 +99,7 @@ const ImagePicker = ({ option, value, onChange, setOutsideClickFreezed }) => {
 			/>
 
 			<GenericOptionType
+				renderComponent={Radio}
 				value={value["background_attachment"]}
 				values={value}
 				option={{
@@ -119,6 +126,7 @@ const ImagePicker = ({ option, value, onChange, setOutsideClickFreezed }) => {
 
 			{value.background_image.url && (
 				<GenericOptionType
+					renderComponent={ColorPicker}
 					value={value["overlayColor"]}
 					values={value}
 					option={{
