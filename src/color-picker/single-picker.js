@@ -1,17 +1,13 @@
+import bezierEasing from 'bezier-easing';
+import classnames from 'classnames';
 import {
-	createElement,
-	Component,
-	createPortal,
-	useRef,
-	createRef,
-} from 'react'
+	useRef
+} from 'react';
 import ReactDOM from "react-dom";
-import PickerModal, { getNoColorPropFor } from './picker-modal'
-import { Transition } from 'react-spring/renderprops'
-import bezierEasing from 'bezier-easing'
-import classnames from 'classnames'
+import { Transition } from 'react-spring/renderprops';
+import usePopoverMaker from '../usePopoverMaker';
+import PickerModal, { getNoColorPropFor } from './picker-modal';
 
-import usePopoverMaker from '../usePopoverMaker'
 
 const SinglePicker = ({
 	option,

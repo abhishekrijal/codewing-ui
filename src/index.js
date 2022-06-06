@@ -20,6 +20,8 @@ export { default as catSelect } from "./options/ab-cat-select";
 export { default as BoxShadow } from "./options/ab-box-shadow";
 export { default as BackgroundPicker } from "./options/ab-background";
 
+export { default as Layers } from "./options/ab-layers";
+
 
 export { default as GenericOptionType } from './GenericOptionType';
 

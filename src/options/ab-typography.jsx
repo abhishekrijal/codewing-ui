@@ -1,20 +1,19 @@
 import { Transition } from "@react-spring/web";
-import {
-	createPortal,
-	useCallback,
-	useMemo,
-	useRef,
-	useState,
-} from "react";
-import ReactDOM from "react-dom";
 import { __ } from "@wordpress/i18n";
 import bezierEasing from "bezier-easing";
 import classnames from "classnames";
-import { maybePromoteScalarValueIntoResponsive } from "../responsive-controls";
-import usePopoverMaker from "../usePopoverMaker";
+import {
+	useCallback,
+	useMemo,
+	useRef,
+	useState
+} from "react";
+import ReactDOM from "react-dom";
 import OutsideClickHandler from "../react-outside-click-handler";
+import { maybePromoteScalarValueIntoResponsive } from "../responsive-controls";
 import { familyForDisplay, humanizeVariations } from "../typography/helpers";
 import TypographyModal from "../typography/TypographyModal";
+import usePopoverMaker from "../usePopoverMaker";
 
 const getLeftForEl = (modal, el) => {
 	if (!modal) return;
